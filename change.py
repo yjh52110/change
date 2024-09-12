@@ -1,7 +1,7 @@
 import requests
 import json
 import time
-
+import threading
 
 def send_post_request():
     url = "https://fin.dding.net/v2/tenant/wechat/configure_password"
@@ -36,8 +36,18 @@ def send_post_request():
     except Exception as e:
         print(f"An error occurred: {e}")
 
+def start_threads():
+    threads = []
+    for _ in range(10):  # 启动 10 个线程
+        thread = threading.Thread(target=send_post_request)
+        thread.start()
+        threads.append(thread)
+    
+    # 可选：等待所有线程完成（如果需要）
+    for thread in threads:
+        thread.join()
 
-# 无限循环，每秒钟发送一次 POST 请求
+# 无限循环，每秒启动 10 个线程
 while True:
-    send_post_request()
-    # time.sleep(1)
+    start_threads()
+    # time.sleep(1)  # 每秒钟启动一次线程
