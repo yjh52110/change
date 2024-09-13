@@ -46,7 +46,7 @@ def send_post_request():
 
 def start_threads():
     threads = []
-    for _ in range(10):  # 启动 10 个线程
+    for _ in range(1):  # 启动 10 个线程
         thread = threading.Thread(target=send_post_request)
         thread.start()
         threads.append(thread)
@@ -58,4 +58,4 @@ def start_threads():
 # 无限循环，每秒启动 10 个线程
 while True:
     start_threads()
-    time.sleep(1)  # 每秒钟启动一次线程
+    # time.sleep(1)  # 每秒钟启动一次线程
