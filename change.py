@@ -25,18 +25,18 @@ def send_post_request():
     password = generate_random_password()
 
     data = {
-        "gcid": "",
         "userid": "",
+        "token": "b79020ce-c07f-4c41-b290-f8e87f9fb135",
+        "gcid": "",
+        "wechatId": "",
         "params": {
             "password": password,
-            "uuid": "6f6f061aed68fea53e5f875a7699cf39",
-            "passwordId": "1015",
-            "beginTime": "2024-09-01 00:00:00",
-            "endTime": "2025-01-16 00:00:00",
             "compactId": "3EAC9E68A541DG4B95I8067G44B35F3021D7",
+            "passwordId": "",
+            "beginTime": "2024-09-01 00:00:00",
+            "endTime": "2025-01-15 00:00:00",
+            "uuid": "6f6f061aed68fea53e5f875a7699cf39",
         },
-        "token": "b79020ce-c07f-4c41-b290-f8e87f9fb135",
-        "wechatId": "",
     }
 
     try:
